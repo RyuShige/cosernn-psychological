@@ -63,6 +63,7 @@ def main(num_samples, repeats, out):
                 'number_of_tracks_in_sessions': create_int_feature(create_numpy_matrix(400)+10), #tf.FixedLenFeature([400], tf.int64),
                 'session_start_time': create_int_feature(create_numpy_matrix(400)) #tf.FixedLenFeature([400], tf.int64)
             }
+            print(features)
             tf_example = tf.train.Example(features=tf.train.Features(feature=features))
             writer.write(tf_example.SerializeToString())
         writer.close()
