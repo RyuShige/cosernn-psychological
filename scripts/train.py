@@ -87,6 +87,8 @@ def main():
         handle = tf.placeholder(tf.string, shape=[], name="handle_for_iterator")
         training_handle, train_iter, gen_iter = make_dataset_generator(sess, handle, args, tfrecords, 0)
 
+        print(train_iter) # データ見てみる
+
         val_handle, val_iter, _ = make_dataset_generator(sess, handle, args, tfrecords, 1)
         test_handle, test_iter, _ = make_dataset_generator(sess, handle, args, tfrecords, 1)
 
